@@ -1,0 +1,171 @@
+﻿@page
+@model StepUp.Pages.main.openModel
+@{
+}
+
+<!-- רקע עם טקסט לחיץ -->
+<div class="full-width-wrapper">
+    <a class="overlay-text" onclick="scrollToSection()">
+        <h1>Welcome to StepUp</h1>
+        <p>Click to watch more</p>
+    </a>
+    <!-- תמונה נוספת -->
+    <img src="/picOfShoes/backGroundshoe[2].jpg" alt="shoe image" class="additional-image">
+</div>
+
+<!-- אזור שאליו יתבצע הגלילה -->
+<div id="target-section" class="content-section full-width-wrapper2">
+    <a href="/category/hiking" class="side-text side-text-right link-pic" style="font-family: Impact;">Hiking</a>
+    <a href="/category/sneakers" class="link-pic" style="font-family: Rockwell; font-weight: bold;">Sneakers</a>
+    <a href="/category/traning" class="side-text side-text-left link-pic" style="font-family: Broadway">Training</a>
+    <p></p>
+</div>
+
+
+<script>
+    function scrollToSection() {
+        document.getElementById("target-section").scrollIntoView({ behavior: "smooth" });
+    }
+</script>
+
+<style>
+    a:hover{
+        color: #ffcc00; /* הופך את צבע הקישור לאדום כשמעבירים עליו את העכבר */
+        text-decoration: none; /* מסיר את הקו שמתחת לקישור גם בהובר */
+    }
+
+    .link-pic {
+        font-size: 40px;
+        color: peru;
+        text-decoration: none;
+    }
+
+    .text-container {
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .center-text {
+        position: relative;
+        z-index: 2;
+    }
+
+    .side-text {
+        position: absolute;    
+        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .side-text-right {
+        right: 15%; /* מרחק מהקצה הימני */
+    }
+
+    .side-text-left {
+        left: 15%; /* מרחק מהקצה השמאלי */
+    }
+
+    /* שאר הסגנונות נשארים זהים */
+
+    /* אזור שאליו מתבצעת הגלילה */
+.content-section {
+    height: 100vh; /* רק בשביל הדגמה שהגלילה ברורה */
+    background-color: transparent; /* הופך את הרקע לשקוף */
+    background-image: url('/picOfShoes/backGroundshoe[2].jpg'); /* תמונה שנייה */
+    background-size: cover; /* התמונה תכסה את כל המרחב */
+    background-position: center; /* תמונה ממורכזת */
+    background-repeat: no-repeat; /* לא תחזור */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative; /* מוודא שהתמונה לא תצא מחוץ לאזור */
+}
+
+
+    main {
+        position: relative;
+        min-height: calc(100vh - 180px);
+    }
+
+    /* מעטפת חדשה לרקע */
+    .full-width-wrapper {
+        margin: 0 calc(-50vw + 50%);
+        margin-top: -1rem; /* מתקן את הרווח מה-navbar */
+        width: 100vw;
+        height: 100vh; /* שים כאן 100vh כדי שהתמונה תכסה את כל הדף */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-image: url('/picOfShoes/backGroundshoe[2].jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+    }
+
+    .full-width-wrapper2 {
+        margin: 0 calc(-50vw + 50%);
+        margin-top: -1rem; /* מתקן את הרווח מה-navbar */
+        width: 100vw;
+        height: 100vh; /* התמונה תכסה את כל הדף */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-image: url('/picOfShoes/all3type.jpg');
+        background-size: cover; /* התמונה תכסה את כל המרחב */
+        background-position: center; /* ממורכזת */
+        background-repeat: no-repeat;
+        position: relative;
+    }
+
+    /* תמונה נוספת באותו סגנון כמו התמונה הקודמת */
+    .additional-image {
+        position: absolute; /* ממקם את התמונה בתוך אזור הגלילה */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* שומר על פרופורציות התמונה בלי לעוות אותה */
+        z-index: -1; /* ממקם את התמונה מאחורי התוכן */
+    }
+
+    /* שכבת טקסט לחיצה */
+    .overlay-text {
+        position: absolute;
+        color: white;
+        font-size: 2rem;
+        font-weight: bold;
+        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+        padding: 1rem;
+        text-decoration: none;
+        transition: 0.3s;
+        cursor: pointer; /* הופך את הטקסט ללחיץ */
+        outline: none; /* מסיר את המסגרת */
+        border: none;
+    }
+
+        .overlay-text:focus {
+            outline: none;
+        }
+
+        .overlay-text:hover {
+            color: #ffcc00; /* שינוי צבע בעת מעבר עם העכבר */
+        }
+
+    /* אזור שאליו מתבצעת הגלילה */
+    .content-section {
+        height: 100vh; /* שים כאן 100vh כדי שהתמונה השנייה תכסה את כל הדף */
+        background-color: transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        position: relative;
+    }
+</style>

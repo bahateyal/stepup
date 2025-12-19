@@ -1,0 +1,135 @@
+﻿@page
+@model StepUp.Pages.NewModel
+
+<section class="shoe-section">
+    <h1 class="section-title">NEW</h1>
+
+    <div class="shoes-container">
+        @foreach (var shoe in Model.Shoes)
+        {
+            <div class="shoe-item">
+                <a href="/shoe-details/@shoe.Category" class="shoe-link">
+                    <div class="shoe-image-container">
+                        <img src="@shoe.ImageUrl" alt="@shoe.Category" class="shoe-image" />
+                    </div>
+                </a>
+                <div class="shoe-details">
+                    <h3 class="shoe-name">@shoe.Category</h3>
+                    <p class="shoe-gender">מגדר: @shoe.Gender</p>
+                    <p class="shoe-age-group">סוג: @shoe.AgeGroup</p>
+                    <p class="shoe-price">מחיר: ₪@shoe.Price</p>
+                </div>
+
+            </div>
+        }
+    </div>
+</section>
+
+<style>
+  /* עיצוב הדף הכללי */
+.shoe-section {
+    padding: 40px;
+    background-color: #f8f8f8;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* קונטיינר לכל הנעליים */
+.shoes-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Grid רספונסיבי */
+    gap: 30px;
+    justify-items: center;
+}
+
+/* עיצוב כל נעל בנפרד */
+.shoe-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* הגדלת הנעל בעת ריחוף */
+.shoe-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* עיצוב התמונה של הנעל */
+.shoe-image-container {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+
+.shoe-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* תמונה מלאה לפי פרופורציות */
+    transition: transform 0.3s ease;
+}
+
+.shoe-item:hover .shoe-image {
+    transform: scale(1.05); /* הגדלת התמונה בעת ריחוף */
+}
+
+/* עיצוב פרטי הנעל */
+.shoe-details {
+    padding: 20px;
+    background-color: #fff;
+}
+
+.shoe-name {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.shoe-gender,
+.shoe-age-group,
+.shoe-price {
+    font-size: 1em;
+    margin: 5px 0;
+    color: #666;
+}
+
+.shoe-price {
+    font-weight: bold;
+    color: #000;
+}
+
+/* עיצוב הקישור */
+.shoe-link {
+    text-decoration: none;
+}
+
+
+
+    .section-title {
+        font-size: 2em;
+    }
+
+    .shoes-container {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* התאמת grid למובייל */
+    }
+
+    .shoe-image {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        transition: transform 0.3s ease;
+    }
+
+</style> 

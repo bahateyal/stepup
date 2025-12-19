@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]StepUp</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/StepUp.styles.css" asp-append-version="true" />
+    <link href="~/css/styles.css" rel="stylesheet" />
+</head>
+<body>
+    <div style="background-color: #E1E4A6; box-shadow: 10px 10px 50px rgba(225, 225, 166, 0.6), -10px -10px 50px rgba(225, 225, 166, 0.8);">
+        <a href="/main/open" style="text-decoration: none;"><h1 class="logo">StepUp </h1></a>
+    </div> 
+
+
+
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-black border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-page="/main/open">StepUp</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-page="/category/men">Men</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-page="/category/women">Women</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-page="/category/kids">Kids</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-page="/category/sale">SALE</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-page="/category/new">NEW</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-page="/category/traning">Traning</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-page="/category/sneakers">Sneakers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-page="/category/hiking">Hiking</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2025 - StepUp - <a asp-area="" asp-page="/Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>
+<style>
+    .logo {
+        font-family: Algerian; /*עיצוב הכותרת בחלקו העליון של הדף  */
+        text-align: center;
+        border: 0px solid black; /* מסגרת שחורה */
+        padding: 10px; /* מרווח פנימי */
+        display: block; /* מאפשר שימוש ב-margin אוטומטי */
+        text-align: center; /* ממרכז את הטקסט בתוך המסגרת */
+        width: fit-content; /* מתאים את הרוחב לטקסט */
+        margin: 0 auto; /* ממרכז את האלמנט בשורה שלו */
+        border-radius: 5px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-size: 50px;
+        color: black;
+    }
+
+
+    .navbar {
+        min-height: 80px; /* ניתן לשנות את המספר לפי הצורך */
+        padding-top:10px; /* רווח בין הכתוב (נוובר לינק) לבין חלקו העליון של הנוובר */
+        padding-bottom: 10px; /* רווח בין הכתוב (נוובר לינק) לבין חלקו התחתון של הנוובר */
+    }
+
+    .navbar-nav .nav-item {
+        margin-right: 30px; /* רווח בין האלמנטים */
+    }
+
+    .navbar-nav .nav-link {
+        padding-right: 40px; /* הגדלת הריווח הפנימי מצד ימין */
+        padding-left: 40px; /* הגדלת הריווח הפנימי מצד שמאל */
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 20px; /* שנה את הגודל לפי הצורך */
+        font-family: fantasy; /* סוג הפונט בנווברים הקטנים */
+    }
+
+    .navbar-brand {
+        font-size: 40px; /* שנה את הגודל לפי הצורך */
+        font-family: Open Sans;/* סוג הפונט בנוובר הראשי */
+        font-weight:bold;
+    }
+
+</style>
