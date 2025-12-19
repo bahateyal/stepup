@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("StepUp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+05ce8f348ef7075937cbb720d06d9b4d635e8c13")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fcd47bc0d002900fd7c0ffdf8d359149cca3234e")]
 [assembly: System.Reflection.AssemblyProductAttribute("StepUp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("StepUp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
